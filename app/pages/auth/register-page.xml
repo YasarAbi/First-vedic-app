@@ -1,0 +1,26 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Üye Ol" class="bg-purple-600 text-white">
+        <NavigationButton text="Geri" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Kişisel Bilgiler" class="text-lg font-bold mb-4" />
+            
+            <TextField hint="Ad" text="{{ firstName }}" class="input mb-3 p-4 bg-white rounded-lg" />
+            <TextField hint="Soyad" text="{{ lastName }}" class="input mb-3 p-4 bg-white rounded-lg" />
+            <TextField hint="E-posta" text="{{ email }}" keyboardType="email" class="input mb-3 p-4 bg-white rounded-lg" />
+            <TextField hint="Şifre" text="{{ password }}" secure="true" class="input mb-3 p-4 bg-white rounded-lg" />
+            
+            <Label text="Doğum Bilgileri" class="text-lg font-bold mt-4 mb-4" />
+            
+            <DatePicker date="{{ birthDate }}" class="mb-3 p-2 bg-white rounded-lg" />
+            <TimePicker time="{{ birthTime }}" class="mb-3 p-2 bg-white rounded-lg" />
+            
+            <Button text="Doğum Yerini Seç" tap="{{ onSelectBirthplace }}" class="btn mb-3 bg-purple-400 text-white p-4 rounded-lg" />
+            <Label text="{{ birthplaceText }}" class="text-sm text-gray-600 mb-4" textWrap="true" />
+            
+            <Button text="Üyeliği Tamamla" tap="{{ onRegister }}" class="btn bg-purple-600 text-white p-4 rounded-lg" />
+        </StackLayout>
+    </ScrollView>
+</Page>

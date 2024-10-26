@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Profil" class="bg-purple-600 text-white">
+        <NavigationButton text="Geri" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Image src="{{ profileImage }}" class="h-32 w-32 rounded-full mx-auto mb-4" />
+            
+            <Label text="{{ fullName }}" class="text-2xl font-bold text-center mb-2" />
+            <Label text="{{ email }}" class="text-gray-600 text-center mb-6" />
+            
+            <GridLayout rows="auto, auto, auto" columns="auto, *" class="bg-white p-4 rounded-lg mb-4">
+                <Label row="0" col="0" text="Doğum Tarihi:" class="font-bold" />
+                <Label row="0" col="1" text="{{ birthDate }}" class="text-right" />
+                
+                <Label row="1" col="0" text="Doğum Saati:" class="font-bold" />
+                <Label row="1" col="1" text="{{ birthTime }}" class="text-right" />
+                
+                <Label row="2" col="0" text="Doğum Yeri:" class="font-bold" />
+                <Label row="2" col="1" text="{{ birthPlace }}" class="text-right" textWrap="true" />
+            </GridLayout>
+            
+            <Button text="Profil Fotoğrafı Değiştir" tap="{{ onChangePhoto }}" 
+                    class="btn mb-3 bg-purple-400 text-white p-4 rounded-lg" />
+            <Button text="Çıkış Yap" tap="{{ onLogout }}" 
+                    class="btn bg-red-500 text-white p-4 rounded-lg" />
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Giriş Yap" class="bg-purple-600 text-white" />
+    
+    <StackLayout class="p-4">
+        <Image src="~/images/logo.png" class="h-32 w-32 mx-auto mb-8" stretch="aspectFit" />
+        
+        <TextField hint="E-posta" text="{{ email }}" keyboardType="email" class="input mb-4 p-4 bg-white rounded-lg" />
+        <TextField hint="Şifre" text="{{ password }}" secure="true" class="input mb-6 p-4 bg-white rounded-lg" />
+        
+        <Button text="Giriş Yap" tap="{{ onLogin }}" class="btn mb-4 bg-purple-600 text-white p-4 rounded-lg" />
+        <Button text="Üye Ol" tap="{{ onRegister }}" class="btn bg-transparent text-purple-600 p-4" />
+    </StackLayout>
+</Page>

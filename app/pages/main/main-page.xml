@@ -1,0 +1,33 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Doğum Haritam" class="bg-purple-600 text-white">
+        <ActionItem tap="{{ onProfile }}" ios.position="right" android.position="actionBar">
+            <Label text="&#xf2bd;" class="fas text-xl" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout rows="*, auto">
+        <!-- Ana İçerik Alanı -->
+        <StackLayout row="0" class="p-4">
+            <Label text="{{ welcomeMessage }}" class="text-lg mb-4" textWrap="true" />
+            <ScrollView height="100%">
+                <ListView items="{{ chatMessages }}" class="chat-list">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="p-2">
+                            <Label col="0" text="{{ isUser ? '👤' : '🔮' }}" class="text-2xl mr-2" />
+                            <Label col="1" text="{{ message }}" textWrap="true" 
+                                   class="{{ isUser ? 'bg-purple-100 p-3 rounded-lg' : 'bg-gray-100 p-3 rounded-lg' }}" />
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+            </ScrollView>
+        </StackLayout>
+
+        <!-- Alt Menü -->
+        <GridLayout row="1" columns="*, auto" class="p-4 bg-white border-t border-gray-200">
+            <TextField col="0" hint="Doğum haritanız hakkında bir soru sorun..." 
+                      text="{{ messageText }}" class="input p-3 bg-gray-50 rounded-lg" />
+            <Button col="1" text="Gönder" tap="{{ sendMessage }}" 
+                    class="ml-2 bg-purple-600 text-white p-3 rounded-lg" />
+        </GridLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,21 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:maps="@nativescript/google-maps"
+      navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Doğum Yeri Seç" class="bg-purple-600 text-white">
+        <NavigationButton text="Geri" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+    
+    <GridLayout rows="*, auto">
+        <maps:MapView row="0" 
+                     latitude="{{ latitude }}"
+                     longitude="{{ longitude }}"
+                     zoom="{{ zoom }}"
+                     mapTap="{{ onMapTap }}"
+                     mapReady="{{ onMapReady }}" />
+                     
+        <Button row="1" 
+                text="Bu Konumu Seç" 
+                tap="{{ onConfirmLocation }}" 
+                class="btn m-4 bg-purple-600 text-white p-4 rounded-lg" />
+    </GridLayout>
+</Page>
